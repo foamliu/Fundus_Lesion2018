@@ -13,22 +13,13 @@
 
 ## 数据集
 
-![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/dataset.png)
+![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/fundus_lesion_eg1.png)
 
-按照 [说明](https://challenger.ai/competition/fl2018) 下载 SUN RGB-D 数据集，放在 data 目录内。
-
-```bash
-$ wget http://3dvision.princeton.edu/projects/2015/SUNrgbd/data/SUNRGBD.zip
-$ wget http://3dvision.princeton.edu/projects/2015/SUNrgbd/data/SUNRGBDtoolbox.zip
-```
+按照 [说明](https://challenger.ai/competition/fl2018) 下载 眼底水肿病变区域自动分割 数据集，放在 data 目录内。
 
 ## 架构
 
-![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/segnet.png)
-
-
-## ImageNet 预训练模型
-下载 [VGG16](https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels.h5) 放在 models 目录内。
+![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/segnet.png)
 
 ## 用法
 ### 数据预处理
