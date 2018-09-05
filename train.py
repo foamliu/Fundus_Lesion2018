@@ -8,7 +8,7 @@ from keras.utils import multi_gpu_model
 from config import patience, epochs, num_train_samples, num_valid_samples, batch_size
 from data_generator import train_gen, valid_gen
 from model import build_model
-from utils import get_available_gpus, get_available_cpus, categorical_crossentropy_with_class_rebal
+from utils import get_available_gpus, get_available_cpus, sparse_cross_entropy
 
 if __name__ == '__main__':
     # Parse arguments
@@ -53,7 +53,7 @@ if __name__ == '__main__':
             new_model.load_weights(pretrained_path)
 
     sgd = keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5.)
-    new_model.compile(optimizer=sgd, loss=categorical_crossentropy_with_class_rebal, metrics=['accuracy'])
+    new_model.compile(optimizer=sgd, loss=sparse_cross_entropy, metrics=['accuracy'])
 
     print(new_model.summary())
 
