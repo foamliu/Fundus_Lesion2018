@@ -28,7 +28,7 @@ class DataGenSequence(Sequence):
 
         length = min(batch_size, (len(self.samples) - i))
         X = np.empty((length, img_rows, img_cols, 3), dtype=np.float32)
-        Y = np.empty((length, img_rows, img_cols), dtype=np.int32)
+        Y = np.zeros((length, img_rows, img_cols), dtype=np.int32)
 
         for i_batch in range(length):
             sample = self.samples[i + i_batch]
@@ -39,10 +39,9 @@ class DataGenSequence(Sequence):
             label_image = cv.imread(label_image_path, 0)
             label_image = cv.resize(label_image, (img_cols, img_rows), cv.INTER_NEAREST)
             for i in range(num_classes):
-                label_image[label_image == gray_values[i]] = i
+                Y[label_image == gray_values[i]] = i
 
             X[i_batch] = original_image / 127.5 - 1.
-            Y[i_batch] = label_image
 
         return X, Y
 
