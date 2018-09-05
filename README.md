@@ -30,7 +30,7 @@ $ python pre_process.py
 
 像素分布：
 
-![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/dist.png)
+![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/dist.png)
 
 
 ### 训练
@@ -43,11 +43,11 @@ $ python train.py
 $ tensorboard --logdir path_to_current_dir/logs
 ```
 
-![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/learning_curve.png)
+![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/learning_curve.png)
 
 ### 演示
 
-下载 [预训练模型](https://github.com/foamliu/Semantic-Segmentation/releases/download/v1.0/model.81-3.5244.hdf5) 放在 models 目录，然后执行:
+下载 [预训练模型](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/releases/download/v1.0/model.81-3.5244.hdf5) 放在 models 目录，然后执行:
 
 
 ```bash
@@ -56,18 +56,18 @@ $ python demo.py
 
 图例：
 
-![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/legend.png)
+![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/legend.png)
 
 输入 | 真实 | 输出 |
 |---|---|---|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/0_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/0_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/0_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/1_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/1_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/1_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/2_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/2_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/2_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/3_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/3_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/3_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/4_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/4_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/4_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/5_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/5_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/5_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/6_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/6_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/6_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/7_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/7_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/7_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/8_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/8_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/8_out.png)|
-|![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/9_image.png)  | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/9_gt.png) | ![image](https://github.com/foamliu/Semantic-Segmentation/raw/master/images/9_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/0_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/0_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/0_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/1_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/1_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/1_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/2_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/2_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/2_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/3_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/3_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/3_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/4_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/4_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/4_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/5_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/5_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/5_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/6_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/6_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/6_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/7_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/7_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/7_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/8_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/8_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/8_out.png)|
+|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/9_image.png)  | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/9_gt.png) | ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/9_out.png)|
 
