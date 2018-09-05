@@ -38,10 +38,11 @@ class DataGenSequence(Sequence):
             original_image = cv.resize(original_image, (img_cols, img_rows), cv.INTER_NEAREST)
             label_image = cv.imread(label_image_path, 0)
             label_image = cv.resize(label_image, (img_cols, img_rows), cv.INTER_NEAREST)
-            for i in range(num_classes):
-                Y[label_image == gray_values[i]] = i
+            for j in range(num_classes):
+                label_image[label_image == gray_values[j]] = j
 
             X[i_batch] = original_image / 127.5 - 1.
+            Y[i_batch] = label_image
 
         return X, Y
 
