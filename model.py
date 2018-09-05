@@ -62,14 +62,6 @@ def build_model():
     x = Conv2D(512, (3, 3), activation='relu', kernel_initializer='he_normal', name='conv5_3')(x)
     orig_5 = x
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
-
-    # Add Fully Connected Layer
-    x_fc = Flatten()(x)
-    x_fc = Dense(4096, activation='relu')(x_fc)
-    x_fc = Dropout(0.5)(x_fc)
-    x_fc = Dense(4096, activation='relu')(x_fc)
-    x_fc = Dropout(0.5)(x_fc)
-    x_fc = Dense(1000, activation='softmax')(x_fc)
     model = Model(img_input, x)
 
     # Loads ImageNet pre-trained data
