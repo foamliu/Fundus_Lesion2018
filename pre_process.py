@@ -35,7 +35,7 @@ def gen_gt_file(folder, usage):
                 print('cannot find: {}'.format(label_path))
                 continue
 
-            item = {'original_image': original_path, 'label_path': label_path}
+            item = {'original_image': original_path, 'label_image': label_path}
             gt_list.append(item)
 
     print(len(gt_list))
