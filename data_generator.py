@@ -56,3 +56,24 @@ def train_gen():
 
 def valid_gen():
     return DataGenSequence('valid')
+
+
+def revert_pre_process(x):
+    return ((x + 1) * 127.5).astype(np.uint8)
+
+
+if __name__ == '__main__':
+    data_gen = DataGenSequence('train')
+    item = data_gen.__getitem__(0)
+    x, y = item
+    print(x.shape)
+    print(y.shape)
+
+    for i in range(10):
+        image = revert_pre_process(x[i])
+        image = image[:, :, ::-1].astype(np.uint8)
+        print(image.shape)
+        cv.imwrite('images/sample_{}.jpg'.format(i), image)
+        print('np.max(y[i]): ' + str(np.max(y[i])))
+        print('np.min(y[i]): ' + str(np.min(y[i])))
+        print('np.mean(y[i]): ' + str(np.mean(y[i])))

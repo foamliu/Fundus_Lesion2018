@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import zipfile
-import json
 
 from config import train_folder, valid_folder, original_images_key, label_images_key
+
 
 def ensure_folder(folder):
     if not os.path.exists(folder):
@@ -19,7 +20,8 @@ def extract(package):
 
 def gen_gt_file(folder, usage):
     original_images_root = os.path.join(folder, original_images_key)
-    original_images_folders = [f for f in os.listdir(original_images_root) if os.path.isdir(os.path.join(original_images_root, f))]
+    original_images_folders = [f for f in os.listdir(original_images_root) if
+                               os.path.isdir(os.path.join(original_images_root, f))]
     label_images_root = os.path.join(folder, label_images_key)
 
     gt_list = []
