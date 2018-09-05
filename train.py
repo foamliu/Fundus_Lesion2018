@@ -53,7 +53,7 @@ if __name__ == '__main__':
         if pretrained_path is not None:
             new_model.load_weights(pretrained_path)
 
-    sgd = keras.optimizers.SGD(lr=1e-4, decay=1e-6, momentum=0.9, nesterov=True)
+    sgd = keras.optimizers.SGD(lr=1e-4, decay=1e-6, momentum=0.9, nesterov=True, clipvalue=5.)
     decoder_target = tf.placeholder(dtype='int32', shape=(None, None, None))
     new_model.compile(optimizer=sgd, loss=sparse_cross_entropy, target_tensors=[decoder_target])
 

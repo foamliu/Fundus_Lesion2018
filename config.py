@@ -20,5 +20,3 @@ label_images_key = 'label_images'
 
 labels = ['Background', 'PED', 'SRF', 'REA']
 gray_values = [0, 128, 191, 255]
-
-crop_size = 512
