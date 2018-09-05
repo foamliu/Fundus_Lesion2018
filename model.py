@@ -6,6 +6,17 @@ from keras.utils import plot_model
 
 from config import img_rows, img_cols, num_classes, channel, kernel
 from custom_layers.unpooling_layer import Unpooling
+from utils import ensure_folder
+
+
+def ensure_vgg16_weights():
+    import os
+    if not os.path.isfile('models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'):
+        ensure_folder('models')
+        import urllib.request
+        urllib.request.urlretrieve(
+            "https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5",
+            filename="models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5")
 
 
 def build_model():
@@ -59,11 +70,11 @@ def build_model():
     x_fc = Dense(4096, activation='relu')(x_fc)
     x_fc = Dropout(0.5)(x_fc)
     x_fc = Dense(1000, activation='softmax')(x_fc)
-    model = Model(img_input, x_fc)
+    model = Model(img_input, x)
 
     # Loads ImageNet pre-trained data
-    weights_path = 'models/vgg16_weights_tf_dim_ordering_tf_kernels.h5'
-    model.load_weights(weights_path, by_name=True)
+    weights_path = 'models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'
+    model.load_weights(weights_path)
 
     # Decoder
     x = UpSampling2D(size=(2, 2))(x)
@@ -153,6 +164,7 @@ def build_model():
 
 
 if __name__ == '__main__':
+    ensure_vgg16_weights()
     encoder_decoder = build_model()
     # input_layer = model.get_layer('input')
     print(encoder_decoder.summary())
