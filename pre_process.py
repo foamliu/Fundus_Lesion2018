@@ -26,7 +26,7 @@ def gen_gt_file(folder, usage):
     for original_images_folder in original_images_folders:
         parent = os.path.join(original_images_root, original_images_folder)
         files = [f for f in os.listdir(parent) if f.lower().endswith('.bmp')]
-        label_images_folder = str(original_images_root.split('.')[0]) + '_labelMark'
+        label_images_folder = str(original_images_folder.split('.')[0]) + '_labelMark'
 
         for file in files:
             original_path = os.path.join(parent, file)
