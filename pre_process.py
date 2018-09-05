@@ -19,7 +19,7 @@ def extract(package):
 
 def gen_gt_file(folder, usage):
     original_images_root = os.path.join(folder, original_images_key)
-    folders = [f for f in os.listdir(original_images_root) if os.path.isdir(os.path.join(original_images_folder, f))]
+    folders = [f for f in os.listdir(original_images_root) if os.path.isdir(os.path.join(original_images_root, f))]
     label_images_root = os.path.join(folder, label_images_key)
 
     gt_list = []
