@@ -2,11 +2,9 @@ import json
 
 import cv2 as cv
 import numpy as np
-from keras.applications.vgg16 import preprocess_input
 from keras.utils import Sequence
-from keras.utils import to_categorical
 
-from config import img_rows, img_cols, batch_size, num_classes
+from config import img_rows, img_cols, batch_size, num_classes, gray_values
 
 
 class DataGenSequence(Sequence):
@@ -30,21 +28,19 @@ class DataGenSequence(Sequence):
 
         length = min(batch_size, (len(self.samples) - i))
         X = np.empty((length, img_rows, img_cols, 3), dtype=np.float32)
-        Y = np.empty((length, img_rows, img_cols, num_classes), dtype=np.float32)
+        Y = np.empty((length, img_rows, img_cols), dtype=np.int32)
 
         for i_batch in range(length):
             sample = self.samples[i + i_batch]
-            name = self.names[id]
-            image = get_image(name)
-            category = get_category(id)
-            image, category = random_crop(image, category)
+            original_image_path = sample['original_image']
+            label_image_path = sample['label_image']
+            original_image = cv.imread(original_image_path)
+            label_image = cv.imread(label_image_path, 0)
+            for i in range(num_classes):
+                label_image[label_image == gray_values[i]] = i
 
-            image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-
-            X[i_batch] = image
-            Y[i_batch] = to_categorical(category, num_classes)
-
-        X = preprocess_input(X)
+            X[i_batch] = original_image / 127.5 - 1.
+            Y[i_batch] = label_image
 
         return X, Y
 

@@ -1,5 +1,5 @@
 
-img_rows, img_cols = 512, 128
+img_rows, img_cols = 1024, 512
 channel = 3
 batch_size = 16
 epochs = 1000
@@ -18,7 +18,7 @@ test_folder = 'data/Edema_testset/'
 original_images_key = 'original_images'
 label_images_key = 'label_images'
 
-classes = ['Background', 'PED', 'SRF', 'REA']
+labels = ['Background', 'PED', 'SRF', 'REA']
 gray_values = [0, 128, 191, 255]
 
 crop_size = 512
