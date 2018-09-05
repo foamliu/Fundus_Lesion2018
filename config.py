@@ -1,5 +1,5 @@
 
-img_rows, img_cols = 1024, 512
+img_rows, img_cols = 256, 128
 channel = 3
 batch_size = 16
 epochs = 1000
