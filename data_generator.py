@@ -35,9 +35,9 @@ class DataGenSequence(Sequence):
             original_image_path = sample['original_image']
             label_image_path = sample['label_image']
             original_image = cv.imread(original_image_path)
-            original_image = cv.resize(original_image, (img_rows, img_cols), cv.INTER_NEAREST)
+            original_image = cv.resize(original_image, (img_cols, img_rows), cv.INTER_NEAREST)
             label_image = cv.imread(label_image_path, 0)
-            label_image = cv.resize(label_image, (img_rows, img_cols), cv.INTER_NEAREST)
+            label_image = cv.resize(label_image, (img_cols, img_rows), cv.INTER_NEAREST)
             for i in range(num_classes):
                 label_image[label_image == gray_values[i]] = i
 
