@@ -21,9 +21,9 @@ if __name__ == '__main__':
     test_images = [f for f in os.listdir(test_dir) if f.lower().endswith('.bmp')]
     samples = random.sample(test_images, 10)
 
-    for i, sample in enumerate(samples):
+    for i, filename in enumerate(samples):
         print('Start processing image: {}'.format(filename))
-        filename = sample
+
         image_bgr = cv.imread(filename)
         cv.resize(image_bgr, (img_rows, img_cols), cv.INTER_CUBIC)
         image_rgb = cv.cvtColor(image_bgr, cv.COLOR_BGR2RGB)
