@@ -13,6 +13,8 @@
 
 ## 数据集
 
+自动分割OCT视网膜图像中的三种水肿病变区域：视网膜色素上皮脱离（PED）、视网膜下水肿（SRF）和视网膜水肿区域（REA）:
+
 ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/fundus_lesion_eg1.png)
 
 按照 [说明](https://challenger.ai/competition/fl2018) 下载 眼底水肿病变区域自动分割 数据集，放在 data 目录内。
