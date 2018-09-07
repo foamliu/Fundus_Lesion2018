@@ -25,7 +25,7 @@ if __name__ == '__main__':
         print('Start processing image: {}'.format(filename))
 
         image_bgr = cv.imread(filename)
-        cv.resize(image_bgr, (img_rows, img_cols), cv.INTER_CUBIC)
+        image_bgr = cv.resize(image_bgr, (img_rows, img_cols), cv.INTER_CUBIC)
         image_rgb = cv.cvtColor(image_bgr, cv.COLOR_BGR2RGB)
 
         x_test = np.empty((1, img_rows, img_cols, 3), dtype=np.float32)
