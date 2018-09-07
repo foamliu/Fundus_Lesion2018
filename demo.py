@@ -22,11 +22,11 @@ if __name__ == '__main__':
     samples = random.sample(test_images, 10)
 
     for i, sample in enumerate(samples):
+        print('Start processing image: {}'.format(filename))
         filename = sample
         image_bgr = cv.imread(filename)
         cv.resize(image_bgr, (img_rows, img_cols), cv.INTER_CUBIC)
         image_rgb = cv.cvtColor(image_bgr, cv.COLOR_BGR2RGB)
-        print('Start processing image: {}'.format(filename))
 
         x_test = np.empty((1, img_rows, img_cols, 3), dtype=np.float32)
         x_test[0, :, :, 0:3] = image_rgb / 127.5 - 1.
