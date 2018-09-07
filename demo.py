@@ -29,7 +29,7 @@ if __name__ == '__main__':
         image_rgb = cv.cvtColor(image_bgr, cv.COLOR_BGR2RGB)
 
         x_test = np.empty((1, img_rows, img_cols, 3), dtype=np.float32)
-        x_test[0, :, :, 0:3] = image_rgb / 127.5 - 1.
+        x_test[0] = image_rgb / 127.5 - 1.
 
         out = model.predict(x_test)
         out = np.reshape(out, (img_rows, img_cols, num_classes))
