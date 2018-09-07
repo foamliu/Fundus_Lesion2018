@@ -28,11 +28,6 @@
 $ python pre_process.py
 ```
 
-像素分布：
-
-![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/dist.png)
-
-
 ### 训练
 ```ba$ python train.py
 ```
@@ -42,8 +37,6 @@ $ python pre_process.py
 $ tensorboard --logdir path_to_current_dir/logs
 ```
 
-![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/learning_curve.png)
-
 ### 演示
 
 下载 [预训练模型](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/releases/download/v1.0/model.81-3.5244.hdf5) 放在 models 目录，然后执行:
@@ -52,10 +45,6 @@ $ tensorboard --logdir path_to_current_dir/logs
 ```bash
 $ python demo.py
 ```
-
-图例：
-
-![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/legend.png)
 
 输入 | 输出 | 输入 | 输出 |
 |---|---|---|---|
