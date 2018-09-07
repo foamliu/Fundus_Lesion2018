@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     test_dir = os.path.join(test_folder, original_images_key)
     test_dir = os.path.join(test_dir, 'P0089_MacularCube512x128_4-25-2013_9-32-13_OD_sn2218_cube_z.img')
-    test_images = [f for f in os.listdir(test_dir) if f.lower().endswith('.bmp')]
+    test_images = [os.path.join(test_dir, f) for f in os.listdir(test_dir) if f.lower().endswith('.bmp')]
     samples = random.sample(test_images, 10)
 
     for i, filename in enumerate(samples):
