@@ -41,7 +41,7 @@ $ tensorboard --logdir path_to_current_dir/logs
 
 ### 演示
 
-下载 [预训练模型](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/releases/download/v1.0/model.81-3.5244.hdf5) 放在 models 目录，然后执行:
+下载 [预训练模型](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/releases/download/v1.0/model.120-0.7736.hdf5) 放在 models 目录，然后执行:
 
 
 ```bash
