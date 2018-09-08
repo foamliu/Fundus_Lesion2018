@@ -8,7 +8,7 @@ import numpy as np
 
 from config import img_rows, img_cols, num_classes, test_folder, original_images_key, gray_values
 from model import build_model
-from utils import get_best_model
+from utils import get_best_model, preprocess_input
 
 if __name__ == '__main__':
     model = build_model()
@@ -24,12 +24,11 @@ if __name__ == '__main__':
     for i, filename in enumerate(samples):
         print('Start processing image: {}'.format(filename))
 
-        image_bgr = cv.imread(filename)
-        image_bgr = cv.resize(image_bgr, (img_cols, img_rows), cv.INTER_CUBIC)
-        image_rgb = cv.cvtColor(image_bgr, cv.COLOR_BGR2RGB)
+        image = cv.imread(filename)
+        image = cv.resize(image, (img_cols, img_rows), cv.INTER_CUBIC)
 
         x_test = np.empty((1, img_rows, img_cols, 3), dtype=np.float32)
-        x_test[0] = image_rgb / 127.5 - 1.
+        x_test[0] = preprocess_input(image)
 
         out = model.predict(x_test)
         out = np.reshape(out, (img_rows, img_cols, num_classes))
@@ -41,7 +40,7 @@ if __name__ == '__main__':
         if not os.path.exists('images'):
             os.makedirs('images')
 
-        cv.imwrite('images/{}_image.png'.format(i), image_bgr)
+        cv.imwrite('images/{}_image.png'.format(i), image)
         cv.imwrite('images/{}_out.png'.format(i), out)
 
     K.clear_session()

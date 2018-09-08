@@ -1,4 +1,3 @@
-
 img_rows, img_cols = 512, 256
 channel = 3
 batch_size = 16
@@ -20,3 +19,14 @@ label_images_key = 'label_images'
 
 labels = ['Background', 'PED', 'SRF', 'REA']
 gray_values = [0, 128, 191, 255]
+
+prob = [0.] * 4
+num_total_pixels = 4365881383 + 1295967 + 39616122 + 290827008
+prob[0] = 4365881383 / num_total_pixels
+prob[1] = 1295967 / num_total_pixels
+prob[2] = 39616122 / num_total_pixels
+prob[3] = 290827008 / num_total_pixels
+import numpy as np
+
+median = np.median(prob)
+factor = (median / prob).astype(np.float32)

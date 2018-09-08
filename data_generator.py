@@ -2,9 +2,10 @@ import json
 
 import cv2 as cv
 import numpy as np
-from keras.utils import Sequence
+from keras.utils import Sequence, to_categorical
 
 from config import img_rows, img_cols, batch_size, num_classes, gray_values
+from utils import preprocess_input
 
 
 class DataGenSequence(Sequence):
@@ -28,7 +29,7 @@ class DataGenSequence(Sequence):
 
         length = min(batch_size, (len(self.samples) - i))
         X = np.empty((length, img_rows, img_cols, 3), dtype=np.float32)
-        Y = np.zeros((length, img_rows, img_cols), dtype=np.int32)
+        Y = np.zeros((length, img_rows, img_cols, num_classes), dtype=np.float32)
 
         for i_batch in range(length):
             sample = self.samples[i + i_batch]
@@ -39,9 +40,9 @@ class DataGenSequence(Sequence):
             label_image = cv.imread(label_image_path, 0)
             label_image = cv.resize(label_image, (img_cols, img_rows), cv.INTER_NEAREST)
             for j in range(num_classes):
-                Y[i_batch][label_image == gray_values[j]] = j
+                Y[i_batch][label_image == gray_values[j]] = to_categorical(j, num_classes)
 
-            X[i_batch] = original_image / 127.5 - 1.
+            X[i_batch] = preprocess_input(original_image)
 
         return X, Y
 
