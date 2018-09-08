@@ -1,5 +1,3 @@
-import argparse
-
 import keras
 import tensorflow as tf
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
@@ -8,16 +6,12 @@ from keras.utils import multi_gpu_model
 from config import patience, epochs, num_train_samples, num_valid_samples, batch_size
 from data_generator import train_gen, valid_gen
 from model import build_model
-from utils import get_available_gpus, categorical_crossentropy_with_class_rebal, ensure_folder
+from utils import get_available_gpus, categorical_crossentropy_with_class_rebal, ensure_folder, get_best_model
 
 if __name__ == '__main__':
-    # Parse arguments
-    ap = argparse.ArgumentParser()
-    ap.add_argument("-p", "--pretrained", help="path to save pretrained model files")
-    args = vars(ap.parse_args())
-    pretrained_path = args["pretrained"]
     checkpoint_models_path = 'models/'
     ensure_folder(checkpoint_models_path)
+    pretrained_path = get_best_model()
 
     # Callbacks
     tensor_board = keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=0, write_graph=True, write_images=True)
