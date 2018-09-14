@@ -48,7 +48,7 @@ class DataGenSequence(Sequence):
         if self.usage == 'train':
             X = seq_img.augment_images(X)
             X = seq_det.augment_images(X)
-            Y = seq_det.augment_images(Y)
+            batch_labels = seq_det.augment_images(batch_labels)
 
         for i_batch in range(length):
             for j in range(num_classes):
