@@ -15,13 +15,13 @@
 
 自动分割OCT视网膜图像中的三种水肿病变区域：视网膜色素上皮脱离（PED）、视网膜下水肿（SRF）和视网膜水肿区域（REA）:
 
-![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/fundus_lesion_eg1.png)
+![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/fundus_lesion_eg1.png)
 
 按照 [说明](https://challenger.ai/competition/fl2018) 下载 眼底水肿病变区域自动分割 数据集，放在 data 目录内。
 
 ## 架构
 
-![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/segnet.png)
+![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/segnet.png)
 
 ## 用法
 ### 数据预处理
@@ -41,7 +41,7 @@ $ tensorboard --logdir path_to_current_dir/logs
 
 ### 演示
 
-下载 [预训练模型](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/releases/download/v1.0/model.120-0.7736.hdf5) 放在 models 目录，然后执行:
+下载 [预训练模型](https://github.com/foamliu/Fundus_Lesion2018/releases/download/v1.0/model.120-0.7736.hdf5) 放在 models 目录，然后执行:
 
 
 ```bash
@@ -50,9 +50,22 @@ $ python demo.py
 
 输入 | 输出 | 输入 | 输出 |
 |---|---|---|---|
-|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/0_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/0_out.png)|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/1_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/1_out.png)|
-|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/2_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/2_out.png)|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/3_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/3_out.png)|
-|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/4_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/4_out.png)|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/5_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/5_out.png)|
-|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/6_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/6_out.png)|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/7_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/7_out.png)|
-|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/8_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/8_out.png)|![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/9_image.png)| ![image](https://github.com/foamliu/Automatic-Segmentation-Of-Fundus-Edema-Lesions/raw/master/images/9_out.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/0_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/0_out.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/1_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/1_out.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/2_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/2_out.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/3_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/3_out.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/4_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/4_out.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/5_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/5_out.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/6_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/6_out.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/7_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/7_out.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/8_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/8_out.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/9_image.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/9_out.png)|
 
+### 示例样本
+
+```bash
+$ python data_generator.py
+```
+
+输入 | 输出 | 输入 | 输出 |
+|---|---|---|---|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_0.jpg)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_0.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_1.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_1.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_2.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_2.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_3.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_3.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_4.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_4.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_5.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_5.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_6.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_6.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_7.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_7.png)|
+|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_8.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_8.png)|![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/sample_9.png)| ![image](https://github.com/foamliu/Fundus_Lesion2018/raw/master/images/label_9.png)|
