@@ -30,7 +30,6 @@ class DataGenSequence(Sequence):
 
         length = min(batch_size, (len(self.samples) - i))
         X = np.empty((length, img_rows, img_cols, 3), dtype=np.float32)
-        batch_labels = np.zeros((length, img_rows, img_cols), dtype=np.int32)
         Y = np.zeros((length, img_rows, img_cols, num_classes), dtype=np.float32)
 
         for i_batch in range(length):
@@ -43,16 +42,13 @@ class DataGenSequence(Sequence):
             label_image = cv.resize(label_image, (img_cols, img_rows), cv.INTER_NEAREST)
 
             X[i_batch] = original_image
-            batch_labels[i_batch] = label_image
+            for j in range(num_classes):
+                Y[i_batch][label_image == gray_values[j]] = to_categorical(j, num_classes)
 
         if self.usage == 'train':
             X = seq_img.augment_images(X)
             X = seq_det.augment_images(X)
-            batch_labels = seq_det.augment_images(batch_labels)
-
-        for i_batch in range(length):
-            for j in range(num_classes):
-                Y[i_batch][batch_labels[i_batch] == gray_values[j]] = to_categorical(j, num_classes)
+            Y = seq_det.augment_images(Y)
 
         X = preprocess_input(X)
 
