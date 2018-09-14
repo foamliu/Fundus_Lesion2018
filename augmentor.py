@@ -4,7 +4,8 @@ seq = iaa.Sequential([
     iaa.Fliplr(0.5),
     iaa.CropAndPad(
         percent=(-0.25, 0.25),
-        pad_mode=["wrap"],
+        pad_mode="constant",
+        pad_cval=0
     ),
     iaa.Affine(
         scale={"x": (0.8, 1.2), "y": (0.8, 1.2)},
@@ -12,7 +13,8 @@ seq = iaa.Sequential([
         rotate=(-25, 25),
         shear=(-8, 8),
         order=[0],
-        mode='wrap'
+        mode='constant',
+        cval=0
     )
 ])
 seq_det = seq.to_deterministic()

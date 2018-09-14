@@ -4,9 +4,10 @@ import cv2 as cv
 import numpy as np
 from keras.utils import Sequence, to_categorical
 
+from augmentor import seq_det, seq_img
 from config import img_rows, img_cols, batch_size, num_classes, gray_values
 from utils import preprocess_input
-from augmentor import seq_det, seq_img
+
 
 class DataGenSequence(Sequence):
     def __init__(self, usage):
@@ -96,4 +97,3 @@ if __name__ == '__main__':
         label = revert_labeling(y[i])
         label = label.astype(np.uint8)
         cv.imwrite('images/label_{}.jpg'.format(i), label)
-
