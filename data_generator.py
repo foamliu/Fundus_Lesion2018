@@ -63,6 +63,7 @@ def revert_pre_process(x):
 
 
 def revert_labeling(y):
+    y = np.argmax(y, axis=-1)
     for j in range(num_classes):
         y[y == j] = gray_values[j]
     return y
