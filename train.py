@@ -48,7 +48,7 @@ if __name__ == '__main__':
             new_model.load_weights(pretrained_path)
 
     sgd = keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5.)
-    new_model.compile(optimizer=sgd, loss=categorical_crossentropy_with_class_rebal, metrics=['accuracy'])
+    new_model.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
 
     print(new_model.summary())
 
