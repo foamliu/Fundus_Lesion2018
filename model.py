@@ -65,6 +65,7 @@ def build_model():
     model = Model(img_input, x)
 
     # Loads ImageNet pre-trained data
+    ensure_vgg16_weights()
     weights_path = 'models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'
     model.load_weights(weights_path)
 
