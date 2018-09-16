@@ -29,4 +29,4 @@ prior_prob[3] = 290827008 / num_total_pixels
 import numpy as np
 prior_prob = [9.29380711e-01, 2.76152904e-04, 8.43349828e-03, 6.19096379e-02]
 prior_prob_smoothed = [0.90058363, 0.01290955, 0.01695968, 0.06954713]
-prior_factor = np.array([0.78088884, 3.41744114, 3.36559402, 2.81172266])
+prior_factor = np.array([0.78088884, 3.41744114, 3.36559402, 2.81172266], dtype=np.float32)
