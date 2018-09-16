@@ -20,13 +20,13 @@ label_images_key = 'label_images'
 labels = ['Background', 'PED', 'SRF', 'REA']
 gray_values = [0, 128, 191, 255]
 
-prob = [0.] * 4
+prior_prob = [0.] * 4
 num_total_pixels = 4365881383 + 1295967 + 39616122 + 290827008
-prob[0] = 4365881383 / num_total_pixels
-prob[1] = 1295967 / num_total_pixels
-prob[2] = 39616122 / num_total_pixels
-prob[3] = 290827008 / num_total_pixels
-import numpy as np
+prior_prob[0] = 4365881383 / num_total_pixels
+prior_prob[1] = 1295967 / num_total_pixels
+prior_prob[2] = 39616122 / num_total_pixels
+prior_prob[3] = 290827008 / num_total_pixels
+from utils import smooth_color_prior, compute_prior_factor
 
-median = np.median(prob)
-factor = (median / prob).astype(np.float32)
+prior_prob_smoothed = smooth_color_prior(prior_prob, sigma=5)
+prior_factor = compute_prior_factor(prior_prob_smoothed, gamma=0.5, alpha=1)
