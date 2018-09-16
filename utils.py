@@ -126,3 +126,15 @@ def compute_prior_factor(prior_prob_smoothed, gamma=0.5, alpha=1):
     prior_factor = prior_factor / (np.sum(prior_factor * prior_prob_smoothed))
 
     return prior_factor
+
+
+def get_highest_acc():
+    import re
+    pattern = 'model.(?P<epoch>\d+)-(?P<val_acc>[0-9]*\.?[0-9]*).hdf5'
+    p = re.compile(pattern)
+    acces = [float(p.match(f).groups()[1]) for f in os.listdir('models/') if p.match(f)]
+    if len(acces) == 0:
+        import sys
+        return sys.float_info.min
+    else:
+        return np.max(acces)

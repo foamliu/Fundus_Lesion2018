@@ -6,7 +6,8 @@ from keras.utils import multi_gpu_model
 from config import patience, epochs, num_train_samples, num_valid_samples, batch_size
 from data_generator import train_gen, valid_gen
 from model import build_model
-from utils import get_available_gpus, categorical_crossentropy_with_class_rebal, ensure_folder, get_best_model
+from utils import get_available_gpus, categorical_crossentropy_with_class_rebal, ensure_folder, get_best_model, \
+    get_highest_acc
 
 if __name__ == '__main__':
     checkpoint_models_path = 'models/'
@@ -28,7 +29,9 @@ if __name__ == '__main__':
 
         def on_epoch_end(self, epoch, logs=None):
             fmt = checkpoint_models_path + 'model.%02d-%.4f.hdf5'
-            self.model_to_save.save(fmt % (epoch, logs['val_loss']))
+            highest_acc = get_highest_acc()
+            if float(logs['val_acc']) > highest_acc:
+                self.model_to_save.save(fmt % (epoch, logs['val_loss']))
 
 
     # Load our model, added support for Multi-GPUs
