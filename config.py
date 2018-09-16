@@ -26,7 +26,5 @@ prior_prob[0] = 4365881383 / num_total_pixels
 prior_prob[1] = 1295967 / num_total_pixels
 prior_prob[2] = 39616122 / num_total_pixels
 prior_prob[3] = 290827008 / num_total_pixels
-from utils import smooth_color_prior, compute_prior_factor
-
-prior_prob_smoothed = smooth_color_prior(prior_prob, sigma=5)
-prior_factor = compute_prior_factor(prior_prob_smoothed, gamma=0.5, alpha=1)
+prior_prob_smoothed = [0.90058363, 0.01290955, 0.01695968, 0.06954713]
+prior_factor = [0.78088884, 3.41744114, 3.36559402, 2.81172266]
