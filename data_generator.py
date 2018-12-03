@@ -45,10 +45,10 @@ class DataGenSequence(Sequence):
             for j in range(num_classes):
                 Y[i_batch][label_image == gray_values[j]] = to_categorical(j, num_classes)
 
-        if self.usage == 'train':
-            X = seq_img.augment_images(X)
-            X = seq_det.augment_images(X)
-            Y = seq_det.augment_images(Y)
+        # if self.usage == 'train':
+        #     X = seq_img.augment_images(X)
+        #     X = seq_det.augment_images(X)
+        #     Y = seq_det.augment_images(Y)
 
         X = preprocess_input(X)
 
