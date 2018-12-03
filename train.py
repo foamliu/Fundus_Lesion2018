@@ -6,8 +6,8 @@ from keras.utils import multi_gpu_model
 from config import patience, epochs, num_train_samples, num_valid_samples, batch_size
 from data_generator import train_gen, valid_gen
 from model import build_model
-from utils import get_available_gpus, ensure_folder, get_best_model, \
-    get_highest_acc
+from utils import get_available_gpus, ensure_folder, get_best_model, get_highest_acc, \
+    categorical_crossentropy_with_class_rebal
 
 if __name__ == '__main__':
     checkpoint_models_path = 'models/'
@@ -50,9 +50,9 @@ if __name__ == '__main__':
         if pretrained_path is not None:
             new_model.load_weights(pretrained_path)
 
-    sgd = keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5.)
+    # sgd = keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5.)
     # new_model.compile(optimizer=sgd, loss=categorical_crossentropy_with_class_rebal, metrics=['accuracy'])
-    new_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    new_model.compile(optimizer='adam', loss=categorical_crossentropy_with_class_rebal, metrics=['accuracy'])
 
     print(new_model.summary())
 
