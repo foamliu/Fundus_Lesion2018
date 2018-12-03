@@ -23,7 +23,7 @@ def categorical_crossentropy_with_class_rebal(y_true, y_pred):
     # multiply y_true by weights
     y_true = y_true * weights
 
-    cross_ent = tf.nn.softmax_cross_entropy_with_logits(labels=y_true, logits=y_pred)
+    cross_ent = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y_true, logits=y_pred)
     cross_ent = K.mean(cross_ent, axis=-1)
 
     return cross_ent
